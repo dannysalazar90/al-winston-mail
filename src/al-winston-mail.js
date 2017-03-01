@@ -18,7 +18,7 @@ function getTransport(options) {
  * @constructs Mail
  * @param {object} options - hash of options.
  */
-export const Mail = options => {
+export let Mail = function (options) {
 	options = options || {};
 
 	if (!options.to) {
@@ -79,7 +79,7 @@ winston.transports.Mail = Mail;
  * @param {Object} meta - Additional metadata to attach.
  * @param {function} callback - Callback function to execute and continue.
  */
-Mail.prototype.log = (level, msg, meta, callback) => {
+Mail.prototype.log = function (level, msg, meta, callback) {
 	if (meta) {
 		meta = util.inspect(meta, null, 5);
 	}
@@ -99,9 +99,9 @@ Mail.prototype.log = (level, msg, meta, callback) => {
 		text	: body
 	}, (err, result) => {
 		if (err) {
-			self.emit('error', err);
+			this.emit('error', err);
 		} else {
-			self.emit('info', result.message);
+			this.emit('info', result.message);
 		}
 
 		if(typeof callback === 'function') {
