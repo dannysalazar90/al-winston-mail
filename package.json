@@ -1,0 +1,38 @@
+{
+  "name": "al-winston-mail",
+  "version": "1.0.0",
+  "description": "A mail transport for winston",
+  "main": "./lib/al-winston-mail",
+  "scripts": {
+    "build": "babel src -d lib/",
+    "test": "vows test/*-test.js --spec"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "nodemailer": "3.1.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "simplesmtp": "",
+    "vows": "",
+    "winston": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dannysalazar90/al-winston-mail.git"
+  },
+  "keywords": [
+    "logging",
+    "winston",
+    "transport",
+    "email"
+  ],
+  "author": "Danny Salazar (dssm_15@hotmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannysalazar90/al-winston-mail/issues"
+  },
+  "homepage": "https://github.com/dannysalazar90/al-winston-mail#readme"
+}
